@@ -25,35 +25,42 @@
 <body>
     <div></div>
     <script>
+        console.log("Single Page")
         var div = document.querySelector('div');
-        var startX = 0; // »ñÈ¡ÊÖÖ¸³õÊ¼×ø±ê
+        var startX = 0; // ï¿½ï¿½È¡ï¿½ï¿½Ö¸ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
         var startY = 0;
-        var x = 0; // »ñµÃºÐ×ÓÔ­À´µÄÎ»ÖÃ
+        var x = 0; // ï¿½ï¿½Ãºï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         var y = 0;
-        // ÊÖÖ¸´¥Ãþ
+        // ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½
         div.addEventListener('touchstart', function(e) {
-            //  »ñÈ¡ÊÖÖ¸³õÊ¼×ø±ê
+            //  ï¿½ï¿½È¡ï¿½ï¿½Ö¸ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
             startX = e.targetTouches[0].pageX;
             startY = e.targetTouches[0].pageY;
             x = this.offsetLeft;
             y = this.offsetTop;
             this.style.boxShadow = '0 0 15px rgba(0, 0, 0, .6)';
         });
-        // ÊÖÖ¸Àë¿ª
+        // ï¿½ï¿½Ö¸ï¿½ë¿ª
         div.addEventListener('touchend', function(e) {
             this.style.boxShadow = '';
         });
 
-        // ÊÖÖ¸°´×¡ÒÆ¶¯
+        // ï¿½ï¿½Ö¸ï¿½ï¿½×¡ï¿½Æ¶ï¿½
         div.addEventListener('touchmove', function(e) {
-            //  ¼ÆËãÊÖÖ¸µÄÒÆ¶¯¾àÀë£ºÊÖÖ¸ÒÆ¶¯Ö®ºóµÄ×ø±ê¼õÈ¥ÊÖÖ¸³õÊ¼µÄ×ø±ê
+            //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ë£ºï¿½ï¿½Ö¸ï¿½Æ¶ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½Ö¸ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             var moveX = e.targetTouches[0].pageX - startX;
             var moveY = e.targetTouches[0].pageY - startY;
-            // ÒÆ¶¯ºÐ×Ó ºÐ×ÓÔ­À´µÄÎ»ÖÃ + ÊÖÖ¸ÒÆ¶¯µÄ¾àÀë
+            // ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ + ï¿½ï¿½Ö¸ï¿½Æ¶ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
             this.style.left = x + moveX + 'px';
             this.style.top = y + moveY + 'px';
-            e.preventDefault(); // ×èÖ¹ÆÁÄ»¹ö¶¯µÄÄ¬ÈÏÐÐÎª
+            e.preventDefault(); // ï¿½ï¿½Ö¹ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Îª
         });
+
+        for(var i=0;i<10;i++){
+            setTimeout(function(){
+                console.log(i);
+            },1000)
+        }
     </script>
 </body>
 
